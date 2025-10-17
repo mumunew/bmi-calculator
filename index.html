@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI检测器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>BMI 检测器</h1>
+                <p class="subtitle">快速计算您的身体质量指数</p>
+            </div>
+            
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="height">身高</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="height" placeholder="请输入身高" step="0.1" min="50" max="250">
+                        <span class="unit">cm</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="weight">体重</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" placeholder="请输入体重" step="0.1" min="10" max="500">
+                        <span class="unit">kg</span>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button id="calculateBtn" class="btn btn-primary">计算 BMI</button>
+                    <button id="resetBtn" class="btn btn-secondary">重置</button>
+                </div>
+            </div>
+            
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <div class="bmi-value">
+                        <span class="label">您的 BMI 值</span>
+                        <span class="value" id="bmiValue">0.0</span>
+                    </div>
+                    
+                    <div class="status-indicator">
+                        <div class="status-badge" id="statusBadge">
+                            <span id="statusText">正常</span>
+                        </div>
+                    </div>
+                    
+                    <div class="advice-section">
+                        <h3>健康建议</h3>
+                        <p id="adviceText">保持良好的生活习惯，继续维持健康体重。</p>
+                    </div>
+                    
+                    <div class="bmi-ranges">
+                        <h3>BMI 参考范围</h3>
+                        <div class="range-list">
+                            <div class="range-item underweight">
+                                <span class="range-label">偏瘦</span>
+                                <span class="range-value">&lt; 18.5</span>
+                            </div>
+                            <div class="range-item normal">
+                                <span class="range-label">正常</span>
+                                <span class="range-value">18.5 - 23.9</span>
+                            </div>
+                            <div class="range-item overweight">
+                                <span class="range-label">偏胖</span>
+                                <span class="range-value">24.0 - 27.9</span>
+                            </div>
+                            <div class="range-item obese">
+                                <span class="range-label">肥胖</span>
+                                <span class="range-value">≥ 28.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>BMI = 体重(kg) ÷ 身高²(m)</p>
+            <p class="copyright">© BMI.mumulife.net 版权所有</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
